@@ -1,8 +1,6 @@
 const gameArray = ["Rock", "Paper", "Scissors"];
 
-
-gameRound(playerSelection(), getComputerChoice());
-
+console.log(gameRound(playerSelection(), getComputerChoice()));
 
 function getComputerChoice() {
     let choice = gameArray[Math.floor(Math.random() * gameArray.length)].toUpperCase();
@@ -24,19 +22,19 @@ function playerSelection() {
 function gameRound(playerChoice, computerChoice) {
 
     if (playerChoice === computerChoice) {
-        console.log("It's a tie!");
+        return ("It's a tie!");
     }
 
     else if (playerChoice === "ROCK" && computerChoice === "SCISSORS" || playerChoice === "SCISSORS" && computerChoice === "PAPER" || playerChoice === "PAPER" && computerChoice === "ROCK") {
-        console.log(`You Win! ${playerChoice} beats ${computerChoice}`);
+        return(`You Win! ${playerChoice} beats ${computerChoice}`);
     }
 
     else if (computerChoice  === "ROCK" && playerChoice === "SCISSORS" || computerChoice  === "SCISSORS" && playerChoice === "PAPER" || computerChoice === "PAPER" && playerChoice === "ROCK") {
-        console.log(`You Lose! ${computerChoice} beats ${playerChoice}`);
+        return(`You Lose! ${computerChoice} beats ${playerChoice}`);
     }
 
     else {
-        console.log(`Choice of "${playerChoice}" not valid. Try again next round!`);
+        return(`Choice of "${playerChoice}" not valid. Try again next round!`);
     }
 
 }
